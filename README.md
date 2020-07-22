@@ -7,4 +7,4 @@ I am using [Hugging Face Transformers](https://github.com/huggingface/transforme
 
 
 ### Code:  
-Currently you can view the code [here](https://colab.research.google.com/drive/1zaT4-IV-QdWAY5xRAiUL5-sRCUTknc8f?usp=sharing). It will be uploaded on completion.
+Currently, you can view the code [here](https://colab.research.google.com/drive/1zaT4-IV-QdWAY5xRAiUL5-sRCUTknc8f?usp=sharing). It will be uploaded on completion.
