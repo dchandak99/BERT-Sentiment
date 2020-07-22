@@ -7,7 +7,14 @@ I am using [Hugging Face Transformers](https://github.com/huggingface/transforme
 Firstly, you need to prepare [IMDB data](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) which is publicly available. Format used here is one review per line, with first 12500 lines being positive, followed by 12500 negative lines. Positive has been encoded with 0 and negative with 1.
 
 ### Results:  
-
+|              | precision | recall | f1-score | support |
+|--------------|-----------|--------|----------|---------|
+|          0.0 |      0.90 |   0.93 |     0.91 |   12500 |
+|          1.0 |      0.93 |   0.90 |     0.91 |   12500 |
+|              |           |        |          |         |
+|     accuracy |           |        |     0.91 |   25000 |
+|    macro avg |      0.91 |   0.91 |     0.91 |   25000 |
+| weighted avg |      0.91 |   0.91 |     0.91 |   25000 |
 
 ### Code:  
 Currently, you can view the code [here](https://colab.research.google.com/drive/1zaT4-IV-QdWAY5xRAiUL5-sRCUTknc8f?usp=sharing). It will be uploaded on completion.
