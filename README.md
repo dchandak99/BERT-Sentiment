@@ -22,6 +22,6 @@ You can download data and weights (in the correct format) directly from my drive
 I will optimize the hyperparameters later to get as close to the sota as possible.
 
 ### Code:  
-[Code](BERT-IMDB.ipynb) has been uploaded as a notebook and a [.py](bert_imdb.py) file.  
+Code has been uploaded as a [notebook](BERT-IMDB.ipynb) and a [.py](bert_imdb.py) file.  
   
 *Note:* For the .py file, ensure transformers is installed (command: pip install transformers) and set correct paths in lines 76 and 223.
