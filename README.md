@@ -1,5 +1,5 @@
 # Sentiment Analysis by BERT:
-BERT is state-of-the-art natural language processing model from Google. Using its latent space, it can be repurpossed for various NLP tasks, such as sentiment analysis.  
+[BERT](https://github.com/google-research/bert) is state-of-the-art natural language processing model from Google. Using its latent space, it can be repurpossed for various NLP tasks, such as sentiment analysis.  
 
 I am using [Hugging Face Transformers](https://github.com/huggingface/transformers) and Pytorch and the task is predicting positivity / negativity on IMDB reviews.
 
