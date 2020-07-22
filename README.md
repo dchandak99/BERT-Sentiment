@@ -16,5 +16,8 @@ Firstly, you need to prepare [IMDB data](https://www.kaggle.com/lakshmi25npathi/
 |    macro avg |      0.91 |   0.91 |     0.91 |   25000 |
 | weighted avg |      0.91 |   0.91 |     0.91 |   25000 |
 
+### Optimization:  
+I will optimize the hyperparameters later to get as close to the sota as possible.
+
 ### Code:  
 Currently, you can view the code [here](https://colab.research.google.com/drive/1zaT4-IV-QdWAY5xRAiUL5-sRCUTknc8f?usp=sharing). It will be uploaded on completion.
