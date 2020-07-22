@@ -7,10 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1zaT4-IV-QdWAY5xRAiUL5-sRCUTknc8f
 """
 
-from google.colab import drive
-drive.mount('/content/gdrive')
+#from google.colab import drive
+#drive.mount('/content/gdrive')
 
-!pip install transformers
+#!pip install transformers
 
 import re
 import os
@@ -225,10 +225,4 @@ path = '/content/gdrive/My Drive/BERT_sentiment/weights/'
 train(epochs=10, output_dir=path)
 evaluate(model_dir=path)
 
-a = np.array([1,2,3])
-list(a)
-
-prll
-
-!nvidia-smi
 
