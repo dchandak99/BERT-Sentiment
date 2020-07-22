@@ -6,5 +6,8 @@ I am using [Hugging Face Transformers](https://github.com/huggingface/transforme
 ### Data:  
 Firstly, you need to prepare [IMDB data](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) which is publicly available. Format used here is one review per line, with first 12500 lines being positive, followed by 12500 negative lines. Positive has been encoded with 0 and negative with 1.
 
+### Results:  
+
+
 ### Code:  
 Currently, you can view the code [here](https://colab.research.google.com/drive/1zaT4-IV-QdWAY5xRAiUL5-sRCUTknc8f?usp=sharing). It will be uploaded on completion.
