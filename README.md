@@ -17,6 +17,8 @@ You can download data and weights (in the correct format) directly from my drive
 |     accuracy |           |        |     0.91 |   25000 |
 |    macro avg |      0.91 |   0.91 |     0.91 |   25000 |
 | weighted avg |      0.91 |   0.91 |     0.91 |   25000 |
+  
+As visible above, accuracy achieved is **91 %**
 
 ### Optimization:  
 I will optimize the hyperparameters later to get as close to the sota as possible.
