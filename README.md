@@ -26,4 +26,7 @@ I will optimize the hyperparameters later to get as close to the sota as possibl
 ### Code:  
 Code has been uploaded as a [notebook](BERT-IMDB.ipynb) and a [.py](bert_imdb.py) file.  
   
-*Note:* For the .py file, ensure transformers is installed (command: pip install transformers) and set correct paths in lines 76 and 223.
+*Note:* For the .py file, ensure transformers is installed (command: pip install transformers) and set correct paths in lines 76 and 227.
+
+### Links:
+Useful links to tutorials have been given inside the notebook to guide you through
