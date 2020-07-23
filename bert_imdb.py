@@ -124,20 +124,21 @@ class Transformers:
 
   def _predict_tags_batched(self, dataloader):
         preds = []
-        self.model.eval()
+        self.model.eval()     #turns off no_grad in eval mode
         for batch in tqdm(dataloader, desc="Computing NER tags"):
             batch = tuple(t.to(self.device) for t in batch)
 
             with torch.no_grad():
                 outputs = self.model(batch[0])
-                _, is_neg = torch.max(outputs[0], 1)
-                preds.extend(is_neg.cpu().detach().numpy())
-
+                _, is_neg = torch.max(outputs[0], 1)        # https://pytorch.org/docs/master/generated/torch.max.html
+                preds.extend(is_neg.cpu().detach().numpy())     # preds will be a torch tensor batch by batch (first time add 64 preidction to tensor then continue)
+                                                                # to do numpy operations convert to cpu, detach from computation graph
+                                                                # after calculating gradients dont need computations in the grad
         return preds
 
   def train(self, dataloader, model, epochs):
         assert self.model is None  # make sure we are not training after load() command
-        model.to(self.device)
+        model.to(self.device)      # put all model weights to gpu #every tensor has a device attribute 
         self.model = model
 
         t_total = len(dataloader)    # GRADIENT_ACCUMULATION_STEPS * epochs
@@ -157,6 +158,8 @@ class Transformers:
         print("Num Epochs = %d", epochs)
         print("Total optimization steps = %d", t_total)
 
+        # see the link below for explanation 
+        # https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html#sphx-glr-beginner-blitz-autograd-tutorial-py 
         global_step = 0
         tr_loss, logging_loss = 0.0, 0.0
         model.zero_grad()
@@ -173,22 +176,23 @@ class Transformers:
                 if GRADIENT_ACCUMULATION_STEPS > 1:
                     loss = loss / GRADIENT_ACCUMULATION_STEPS
 
-                loss.backward()
+                loss.backward() #back propagation -- calculate gradients of the loss wrt every wieght/bias there before 
+# if any tensor has grad on // tensor.backward calculate gradients wrt all tensors it was divided or multiplied with before
 
                 tr_loss += loss.item()
                 if (step + 1) % GRADIENT_ACCUMULATION_STEPS == 0:
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), MAX_GRAD_NORM)
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), MAX_GRAD_NORM) #for exploding gradients
 
                     scheduler.step()  # Update learning rate schedule
-                    optimizer.step()
-                    model.zero_grad()
+                    optimizer.step()    
+                    model.zero_grad()       #resets the computation graph             
                     global_step += 1
 
         self.model = model
 
         return global_step, tr_loss / global_step
 
-  def _set_seed(self):
+  def _set_seed(self):        # pytorch weights start from random weights ## to make results reproducible
     torch.manual_seed(SEED)
     if self.device == 'gpu':
       torch.cuda.manual_seed_all(SEED)
@@ -224,5 +228,3 @@ path = '/content/gdrive/My Drive/BERT_sentiment/weights/'
 #os.makedirs(path, exist_ok=True)
 train(epochs=10, output_dir=path)
 evaluate(model_dir=path)
-
-
