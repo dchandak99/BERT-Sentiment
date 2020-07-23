@@ -29,4 +29,4 @@ Code has been uploaded as a [notebook](BERT-IMDB.ipynb) and a [.py](bert_imdb.py
 *Note:* For the .py file, ensure transformers is installed (command: pip install transformers) and set correct paths in lines 76 and 227.
 
 ### Links:
-Useful links to tutorials have been given inside the notebook to guide you through
+Useful comments and links to tutorials have been given inside the notebook to guide you through
