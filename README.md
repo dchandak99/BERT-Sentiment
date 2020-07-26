@@ -28,5 +28,7 @@ Code has been uploaded as a [notebook](BERT-IMDB.ipynb) and a [.py](bert_imdb.py
   
 *Note:* For the .py file, ensure transformers is installed (command: pip install transformers) and set correct paths in lines 76 and 227.
 
+Code with the base BertModel can be found [here](https://colab.research.google.com/drive/1SWaQtV8noqjOveY3P6x7fZFdSUGEN5lh?usp=sharing).
+
 ### Links:
 Useful comments and links to tutorials have been given inside the notebook to guide you through
