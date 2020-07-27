@@ -8,6 +8,10 @@ Firstly, you need to prepare [IMDB data](https://www.kaggle.com/lakshmi25npathi/
   
 You can download data and weights (in the correct format) directly from my drive link [here](https://drive.google.com/drive/folders/1kgy7_0XwGGfbWsY6Y5PUpoCLwoSLt_Rc?usp=sharing).
 
+### Models:   
+I have used 3 models:
+-
+
 ### Results:  
 |              | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
