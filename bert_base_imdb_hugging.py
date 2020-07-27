@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1SWaQtV8noqjOveY3P6x7fZFdSUGEN5lh
 """
 
-!pip install pytorch_pretrained_bert pytorch-nlp
+#!pip install pytorch_pretrained_bert pytorch-nlp
 
-!pip install transformers
+#!pip install transformers
 
 import sys
 import numpy as np
@@ -175,7 +175,7 @@ for epoch_num in range(EPOCHS):
     train_loss = 0
     for step_num, batch_data in enumerate(train_dataloader):
         token_ids, masks, labels = tuple(t.to(device) for t in batch_data)
-        print(str(torch.cuda.memory_allocated(device)/1000000 ) + 'M')
+        #print(str(torch.cuda.memory_allocated(device)/1000000 ) + 'M')
         logits = bert_clf(token_ids, masks)
         
         loss_func = nn.BCELoss()
@@ -191,9 +191,30 @@ for epoch_num in range(EPOCHS):
         clip_grad_norm_(parameters=bert_clf.parameters(), max_norm=1.0)
         optimizer.step()
         
-        clear_output(wait=True)
-        print('Epoch: ', epoch_num + 1)
-        print("\r" + "{0}/{1} loss: {2} ".format(step_num, len(train_data) / BATCH_SIZE, train_loss / (step_num + 1)))
+        #clear_output(wait=True)
+      
+    print('Epoch: ', epoch_num + 1)
+    print("{0}/{1} train loss: {2} ".format(step_num, len(train_data) / BATCH_SIZE, train_loss / (step_num + 1)))
+
+    bert_clf.eval()
+    bert_predicted = []
+    all_logits = []
+    test_loss = 0
+    with torch.no_grad():
+        for step_num_e, batch_data in enumerate(test_dataloader):
+          
+            token_ids, masks, labels = tuple(t.to(device) for t in batch_data)
+
+            logits = bert_clf(token_ids, masks)
+            loss_func = nn.BCELoss()
+            loss = loss_func(logits, labels)
+            test_loss += loss.item()
+            numpy_logits = logits.cpu().detach().numpy()
+        
+            bert_predicted += list(numpy_logits[:, 0] > 0.5)
+            all_logits += list(numpy_logits[:, 0])
+
+    print("{0}/{1} val loss: {2} ".format(step_num_e, len(test_data) / BATCH_SIZE, test_loss / (step_num_e + 1)))
 
 bert_clf.eval()
 bert_predicted = []
@@ -214,4 +235,12 @@ with torch.no_grad():
 np.mean(bert_predicted)
 
 print(classification_report(test_y, bert_predicted))
+
+
+
+for i in range(5):
+  clear_output(wait=True)
+  print('a', i+1)
+  print("{0}/{1} loss: {2} ".format(i, i / 5, i / (i + 1)))
+
 
