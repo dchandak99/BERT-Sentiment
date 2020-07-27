@@ -16,7 +16,7 @@ I have used 3 models:
 - Pytorch pretrained BERT (not from Hugging Face)
 
 ### Results:  
-- BertForSequenceClassification:  
+- BertForSequenceClassification is the best performing model:  
 
 |              | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
@@ -27,7 +27,7 @@ I have used 3 models:
 |    macro avg |      0.91 |   0.91 |     0.91 |   25000 |
 | weighted avg |      0.91 |   0.91 |     0.91 |   25000 |
   
-As visible above, accuracy achieved is **91 %**
+Accuracy achieved: **91 %**
 
 ### Optimization:  
 I will optimize the hyperparameters later to get as close to the sota as possible.
