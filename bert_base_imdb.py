@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/15drExamSUDjuYkGchB1xGBGf0tgvk7NQ
 """
 
-!pip install pytorch_pretrained_bert pytorch-nlp
+#!pip install pytorch_pretrained_bert pytorch-nlp
 
 import sys
 import numpy as np
