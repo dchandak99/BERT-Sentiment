@@ -17,6 +17,7 @@ I have used 3 models:
 
 ### Results:  
 - BertForSequenceClassification:  
+
 |              | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
 |          0.0 |      0.90 |   0.93 |     0.91 |   12500 |
