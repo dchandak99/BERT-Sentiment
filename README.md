@@ -10,7 +10,10 @@ You can download data and weights (in the correct format) directly from my drive
 
 ### Models:   
 I have used 3 models:
--
+
+- BertForSequenceClassification (Hugging Face)
+- BertModel (Hugging Face)
+- Pytorch pretrained BERT (not from Hugging Face)
 
 ### Results:  
 |              | precision | recall | f1-score | support |
