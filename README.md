@@ -30,7 +30,7 @@ I have used 3 models:
 Accuracy achieved: **91 %**
 
 ### Optimization:  
-I will optimize the hyperparameters later to get as close to the sota as possible.
+I will optimize the hyperparameters later to get as close to the sota as possible.  
 You can view the optimization experiments [here](https://colab.research.google.com/drive/1DP9JHqsDPTweMtCpi-i1fnSYjR657PGQ?usp=sharing).
 
 ### Code:  
