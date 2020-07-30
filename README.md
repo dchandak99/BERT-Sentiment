@@ -28,6 +28,8 @@ I have used 3 models:
 | weighted avg |      0.91 |   0.91 |     0.91 |   25000 |
   
 Accuracy achieved: **91 %**
+  
+- After optimization experiments BertModel does better with an accuracy of **93 %**
 
 ### Optimization:  
 I will optimize the hyperparameters later to get as close to the sota as possible.  
