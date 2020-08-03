@@ -16,7 +16,7 @@ I have used 3 models:
 - Pytorch pretrained BERT (not from Hugging Face)
 
 ### Results:  
-- BertForSequenceClassification is the best performing model:  
+- BertForSequenceClassification:  
 
 |              | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
